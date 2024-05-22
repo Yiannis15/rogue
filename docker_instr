@@ -1,0 +1,9 @@
+docker pull nvcr.io/nvidia/pytorch:21.12-py3
+sudo docker run --net=host --gpus all -it --rm --ulimit memlock=-1 --ulimit stack=67108864 -v $PWD:/WORKDIR myimage:latest
+jupyter notebook --allow-root --ip 0.0.0.0 --port 8888
+
+sudo docker run --net=host --ipc=host --gpus all -it --rm -p 8888:8888 --ulimit memlock=-1 --ulimit stack=67108864 -v $PWD:/workspace myimage:latest
+
+change hostname to 0.0.0.0
+
+
